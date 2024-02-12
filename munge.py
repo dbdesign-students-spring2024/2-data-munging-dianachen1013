@@ -1,5 +1,8 @@
 # Place code below to do the munging part of this assignment.
+import os
 def clean_data(file_path_to_clean, file_path_output):
+    input_file_path = os.path.join('data', file_name_to_clean)
+    output_file_path = os.path.join('data', file_name_output)
     with open(file_path_to_clean, 'r') as file:
         lines = file.readlines()
 
@@ -40,8 +43,8 @@ def clean_data(file_path_to_clean, file_path_output):
             output_file.write(line + "\n")
 
 # Specify the input and output file paths
-input_file_path = 'C:\\Users\\86136\\Desktop\\Database\\新建文件夹\\2-data-munging-dianachen1013\\data\\GLB.Ts+dSST.txt'
-output_file_path = 'C:\\Users\\86136\\Desktop\\Database\\新建文件夹\\2-data-munging-dianachen1013\\data\\clean_data.csv'
+file_name_to_clean = 'GLB.Ts+dSST.txt'
+file_name_output = 'clean_data.csv'
 
 # Execute the data cleaning and conversion function
 clean_data(input_file_path, output_file_path)
